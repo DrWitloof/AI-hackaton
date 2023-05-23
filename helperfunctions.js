@@ -9,7 +9,7 @@ function getSpecificClassValue(element, classname) {
   var children = element.children;
   for (var i = 0; i < children.length; i++) {
     var child = children[i];
-    var foundElement = getProductName(child);
+    var foundElement = getSpecificClassValue(child, classname);
     if (foundElement) { return foundElement; }
   }
   return null;
