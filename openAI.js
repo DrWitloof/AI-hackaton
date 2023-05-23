@@ -1,4 +1,5 @@
-function openAI(callbackfunction, apiKey, prompt) {
+function openAI(callbackfunction, prompt_p, apiKey_p) {
+  console.log("openAI(" + callbackfunction + ", " + prompt_p + ", " + apiKey_p + ")");
   const apiUrl = 'https://api.openai.com/v1/completions';
 
   GM_xmlhttpRequest({
@@ -6,15 +7,16 @@ function openAI(callbackfunction, apiKey, prompt) {
     url: apiUrl,
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`
+      'Authorization': `Bearer ${apiKey_p}`
     },
     data: JSON.stringify({
-      'prompt': prompt,
+      'prompt': prompt_p,
       'max_tokens': 500,
       'temperature': 0.6,
       'model': 'text-davinci-002'
     }),
     onload: function (response) {
+      console.log(response);
       const responseData = JSON.parse(response.responseText);
 
       callbackfunction(responseData.choices[0].text);
