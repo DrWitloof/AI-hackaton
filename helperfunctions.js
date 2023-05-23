@@ -1,6 +1,6 @@
 
-function getProductName(element) { getSpecificClassValue(element, "c-product-name__long"); }
-function getProductBrand(element) { getSpecificClassValue(element, "c-product-name__brand"); }
+function getProductName(element) { return getSpecificClassValue(element, "c-product-name__long"); }
+function getProductBrand(element) { return getSpecificClassValue(element, "c-product-name__brand"); }
   
 function getSpecificClassValue(element, classname) {
   if (!element) { return null; }
