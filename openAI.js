@@ -1,6 +1,5 @@
 function openAI(callbackfunction, prompt_p, apiKey_p) {
-  console.log("openAI(" + callbackfunction + ", " + prompt_p + ", " + apiKey_p + ")");
-  
+  console.log("openAI(" + callbackfunction + ", " + prompt_p + ", " + apiKey_p + ")");  
   const apiUrl = 'https://api.openai.com/v1/completions';
 
     GM_xmlhttpRequest({
