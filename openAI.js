@@ -13,7 +13,7 @@ function openAI(callbackfunction, prompt_p, apiKey_p) {
       'prompt': prompt_p,
       'max_tokens': 500,
       'temperature': 0.6,
-      'model': 'text-davinci-002'
+      'model': 'gpt-3.5-turbo'
     }),
     onload: function (response) {
       console.log(response);
